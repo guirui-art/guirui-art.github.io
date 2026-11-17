@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<!-- rui-gui-sculpture edition -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rui Gui 桂睿 — Ceramic Sculptor | Jingdezhen Ceramic University</title>
+<meta name="description" content="Portfolio of Rui Gui (Gui Rui), ceramic sculptor and Associate Professor in the Department of Sculpture, Academy of Fine Arts, Jingdezhen Ceramic University. Research: utility ceramic sculpture — merging vessel into form.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f5f1;
+    --bg-soft:#efede7;
+    --ink:#17181a;
+    --ink-soft:#5c5a55;
+    --muted:#8a877f;
+    --line:#e2ded5;
+    --celadon:#6f8f85;
+    --celadon-deep:#4e6e64;
+    --serif:"Cormorant Garamond","Georgia","Songti SC","STSong","SimSun",serif;
+    --sans:"Jost","Avenir Next","PingFang SC","Microsoft YaHei",-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:300;
+    line-height:1.7;
+    letter-spacing:.01em;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.1rem clamp(1.2rem,4vw,3.5rem);
+    background:rgba(247,245,241,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s;
+  }
+  nav.scrolled{border-bottom-color:var(--line)}
+  .brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.14em}
+  .brand span{color:var(--muted);font-size:.85rem;letter-spacing:.3em;margin-left:.7em;font-family:var(--sans);font-weight:400}
+  nav ul{display:flex;gap:2.2rem;list-style:none}
+  nav ul a{
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
+    padding-bottom:.25em;border-bottom:1px solid transparent;transition:.25s;
+  }
+  nav ul a:hover{color:var(--ink);border-bottom-color:var(--celadon)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;min-height:100vh;
+    display:flex;align-items:flex-end;
+    background:#0c0d0e url("images/yuanshan_1.jpg") center/cover no-repeat;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(8,9,10,.05) 0%,rgba(8,9,10,.08) 55%,rgba(8,9,10,.66) 100%);
+  }
+  .hero-inner{
+    position:relative;z-index:2;width:100%;
+    padding:0 clamp(1.2rem,6vw,6rem) clamp(3rem,9vh,6.5rem);
+    color:#f4f2ec;
+  }
+  .hero .kicker{
+    font-size:.8rem;letter-spacing:.42em;text-transform:uppercase;color:rgba(244,242,236,.75);
+    margin-bottom:1.4rem;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:500;
+    font-size:clamp(3rem,8.5vw,6.8rem);
+    line-height:1.02;letter-spacing:.02em;
+  }
+  .hero h1 .cn{
+    display:block;font-size:clamp(1.05rem,2.2vw,1.6rem);letter-spacing:.65em;
+    font-weight:400;color:rgba(244,242,236,.85);margin-top:1.1rem;
+  }
+  .hero .tagline{
+    margin-top:1.6rem;font-size:clamp(.92rem,1.4vw,1.05rem);
+    color:rgba(244,242,236,.88);max-width:46rem;font-weight:300;
+  }
+  .hero .tagline em{font-family:var(--serif);font-style:italic;font-size:1.12em}
+  .scroll-hint{
+    position:absolute;right:clamp(1.2rem,4vw,3.5rem);bottom:2.2rem;z-index:2;
+    writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;
+    color:rgba(244,242,236,.6);
+  }
+  .scroll-hint::after{
+    content:"";display:block;width:1px;height:3.4rem;margin:0.8rem auto 0;
+    background:linear-gradient(180deg,rgba(244,242,236,.7),transparent);
+    animation:drip 2.2s ease-in-out infinite;
+  }
+  @keyframes drip{0%{transform:scaleY(.2);transform-origin:top;opacity:0}45%{opacity:1}100%{transform:scaleY(1);opacity:0}}
+
+  /* ---------- section shell ---------- */
+  section{padding:clamp(4.5rem,10vh,8rem) clamp(1.2rem,6vw,6rem)}
+  .sec-head{display:flex;align-items:baseline;gap:1.4rem;margin-bottom:clamp(2.2rem,5vh,3.6rem)}
+  .sec-head .num{
+    font-family:var(--serif);font-size:1rem;color:var(--celadon);letter-spacing:.1em;
+  }
+  .sec-head h2{
+    font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,3.6vw,2.9rem);letter-spacing:.03em;
+  }
+  .sec-head .cn-sub{color:var(--muted);font-size:.95rem;letter-spacing:.4em}
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:clamp(2.5rem,6vw,5.5rem);
+  }
+  .about-text p{margin-bottom:1.35rem;color:#33322f;font-size:1.02rem}
+  .about-text .lead{
+    font-family:var(--serif);font-size:clamp(1.35rem,2.3vw,1.7rem);
+    line-height:1.5;color:var(--ink);font-weight:400;
+  }
+  .about-text .lead em{color:var(--celadon-deep)}
+  .about-text .term-note{
+    font-size:.86rem;color:var(--muted);line-height:1.65;
+    border-left:2px solid var(--celadon);padding-left:1rem;margin-top:1.6rem;
+  }
+  .about-text .term-note b{color:var(--celadon-deep);font-weight:500}
+  .about-side{border-left:1px solid var(--line);padding-left:clamp(1.4rem,3vw,2.6rem)}
+  .fact{margin-bottom:1.7rem}
+  .fact h4{
+    font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--celadon-deep);
+    margin-bottom:.45rem;font-weight:500;
+  }
+  .fact p{font-size:.95rem;color:var(--ink-soft)}
+  .fact p b{font-weight:500;color:var(--ink)}
+
+  /* ---------- works ---------- */
+  #works{background:var(--bg-soft)}
+  .masonry{columns:3;column-gap:1.6rem}
+  @media(max-width:1080px){.masonry{columns:2}}
+  @media(max-width:640px){.masonry{columns:1}}
+  .work{
+    break-inside:avoid;margin-bottom:1.6rem;
+    background:#fff;border:1px solid var(--line);
+    cursor:zoom-in;overflow:hidden;
+    opacity:0;transform:translateY(26px);
+    transition:opacity .7s ease,transform .7s ease,box-shadow .35s ease;
+  }
+  .work.visible{opacity:1;transform:none}
+  .work:hover{box-shadow:0 18px 44px -18px rgba(23,24,26,.28)}
+  .work .ph{position:relative;overflow:hidden;background:#dcd8cf}
+  .work img{width:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .work:hover img{transform:scale(1.035)}
+  .work .count{
+    position:absolute;top:.8rem;right:.8rem;
+    font-size:.68rem;letter-spacing:.14em;color:#f4f2ec;
+    background:rgba(12,13,14,.55);padding:.28em .8em;border-radius:2em;
+    backdrop-filter:blur(4px);
+  }
+  .work figcaption{padding:1.05rem 1.2rem 1.2rem}
+  .work .t{
+    font-family:var(--serif);font-size:1.22rem;font-weight:600;letter-spacing:.02em;
+  }
+  .work .t .cn{color:var(--muted);font-weight:400;font-size:1rem;margin-left:.55em}
+  .work .meta{font-size:.8rem;color:var(--muted);margin-top:.3rem;letter-spacing:.06em}
+  .work .award{
+    display:inline-block;margin-top:.65rem;
+    font-size:.72rem;letter-spacing:.12em;color:var(--celadon-deep);
+    border:1px solid var(--celadon);border-radius:2em;padding:.3em 1em;
+  }
+
+  /* ---------- awards ---------- */
+  .awards-list{border-top:1px solid var(--line)}
+  .aw{
+    display:grid;grid-template-columns:5.2rem 1fr auto;gap:1.4rem;align-items:baseline;
+    padding:1.05rem .4rem;border-bottom:1px solid var(--line);
+    opacity:0;transform:translateY(16px);transition:.6s ease;
+  }
+  .aw.visible{opacity:1;transform:none}
+  .aw .yr{font-family:var(--serif);font-size:1.05rem;color:var(--celadon-deep)}
+  .aw .what{font-size:.98rem;color:#33322f}
+  .aw .what span{color:var(--muted);font-size:.88rem;margin-left:.8em}
+  .aw .cat{
+    font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);
+  }
+
+  /* ---------- contact ---------- */
+  #contact{background:#101112;color:#efede7;text-align:center}
+  #contact h2{
+    font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.4vw,3.4rem);
+    margin-bottom:1.2rem;letter-spacing:.02em;
+  }
+  #contact .sub{color:rgba(239,237,231,.62);max-width:34rem;margin:0 auto 2.6rem;font-size:.98rem}
+  .mail-btn{
+    display:inline-block;font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;
+    border:1px solid rgba(239,237,231,.4);padding:1.05em 2.6em;transition:.3s;
+  }
+  .mail-btn:hover{background:#efede7;color:#101112;border-color:#efede7}
+  #contact .affil{
+    margin-top:3.2rem;font-size:.8rem;letter-spacing:.2em;color:rgba(239,237,231,.5);
+    text-transform:uppercase;line-height:2.1;
+  }
+
+  footer{
+    background:#101112;color:rgba(239,237,231,.4);
+    text-align:center;font-size:.74rem;letter-spacing:.18em;
+    padding:1.4rem;border-top:1px solid rgba(239,237,231,.08);
+  }
+
+  /* ---------- lightbox ---------- */
+  .lb{
+    position:fixed;inset:0;z-index:100;display:none;
+    background:rgba(10,11,12,.94);
+    align-items:center;justify-content:center;
+  }
+  .lb.open{display:flex}
+  .lb img{max-width:88vw;max-height:82vh;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+  .lb .cap{
+    position:absolute;bottom:2.4rem;left:0;right:0;text-align:center;
+    color:#d8d4cb;font-size:.9rem;letter-spacing:.08em;
+  }
+  .lb .cap b{font-family:var(--serif);font-weight:600;font-size:1.15rem;letter-spacing:.03em}
+  .lb .cap .cn{color:rgba(216,212,203,.6);margin-left:.6em}
+  .lb .btn{
+    position:absolute;top:50%;transform:translateY(-50%);
+    background:none;border:none;color:#efede7;cursor:pointer;
+    font-size:2.4rem;line-height:1;padding:1rem;opacity:.65;transition:.25s;
+    font-family:var(--sans);font-weight:300;
+  }
+  .lb .btn:hover{opacity:1}
+  .lb .prev{left:1.2rem}
+  .lb .next{right:1.2rem}
+  .lb .x{
+    position:absolute;top:1.3rem;right:1.6rem;background:none;border:none;
+    color:#efede7;font-size:1.05rem;letter-spacing:.2em;cursor:pointer;opacity:.7;transition:.25s;
+  }
+  .lb .x:hover{opacity:1}
+  .lb .idx{
+    position:absolute;top:1.6rem;left:2rem;color:rgba(239,237,231,.55);
+    font-size:.8rem;letter-spacing:.24em;
+  }
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr}
+    .about-side{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:2rem}
+    .aw{grid-template-columns:4.2rem 1fr}
+    .aw .cat{grid-column:2;font-size:.66rem}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="brand" href="#top">RUI GUI<span>桂睿</span></a>
+  <ul>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="kicker">Ceramic Sculptor &middot; Portfolio</p>
+    <h1>
+      Rui Gui
+      <span class="cn">桂 睿 &middot; 融 器 于 形</span>
+    </h1>
+    <p class="tagline">
+      <em>Merging Vessel into Form</em> — utility ceramic sculpture between sculptural
+      imagery and vessel function, from Jingdezhen, the porcelain capital of the world.
+    </p>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="sec-head reveal">
+    <span class="num">01</span>
+    <h2>About</h2>
+    <span class="cn-sub">简介</span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p class="lead">
+        Rui Gui is a ceramic sculptor and Associate Professor in the Department of Sculpture,
+        Academy of Fine Arts, Jingdezhen Ceramic University. His research and practice centre on
+        <em>utility ceramic sculpture</em> — works that are at once sculpture and vessel.
+      </p>
+      <p>
+        His doctoral research, <i>Merging Vessel into Form</i>, traces a lineage running from the
+        Neolithic eagle-form ding (taoying ding) and the Song duck-shaped censer to
+        Renaissance covered bowls, asking how Chinese ceramic tradition negotiates the boundary
+        between sculptural imagery and vessel function — and how that negotiation might be
+        renewed in contemporary practice. He is principal investigator of a Jiangxi Provincial
+        Humanities and Social Sciences project on the morphology and functional structure of
+        Jingdezhen utility ceramic sculpture.
+      </p>
+      <p class="term-note">
+        Note on terminology: the Chinese term <i>shiyong taoci diaosu</i> (实用陶瓷雕塑,
+        literally "practical ceramic sculpture") is rendered throughout this site as
+        <b>utility ceramic sculpture</b>.
+      </p>
+      <p>
+        His works have been selected for the 13th National Art Exhibition of China, shown in
+        Milan and South Korea, and collected by public museums including the Shiwan Ceramic
+        Museum. Alongside his studio practice he teaches sculpture and mentors graduate
+        students at JCU.
+      </p>
+    </div>
+    <aside class="about-side reveal">
+      <div class="fact">
+        <h4>Appointment</h4>
+        <p><b>Associate Professor &middot; M.F.A. supervisor</b><br>Department of Sculpture, Academy of Fine Arts<br>Jingdezhen Ceramic University</p>
+      </div>
+      <div class="fact">
+        <h4>Education</h4>
+        <p>Ph.D. in Design, JCU, 2022<br>M.F.A., JCU, 2011<br>B.F.A. in Sculpture, JCU, 2007</p>
+      </div>
+      <div class="fact">
+        <h4>Research Focus</h4>
+        <p>Utility ceramic sculpture; the morphology and functional structure of vessel-forms; vessel-bionic form design</p>
+      </div>
+      <div class="fact">
+        <h4>Selected Recognition</h4>
+        <p>Silver Awards, national ceramic art competitions &middot; 13th National Art Exhibition &middot; exhibitions in Milan &amp; Korea &middot; museum collections &middot; 6 design patents</p>
+      </div>
+      <div class="fact">
+        <h4>Contact</h4>
+        <p>guirui.sculpture@outlook.com</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= WORKS ================= -->
+<section id="works">
+  <div class="sec-head reveal">
+    <span class="num">02</span>
+    <h2>Selected Works</h2>
+    <span class="cn-sub">作品选</span>
+  </div>
+  <div class="masonry" id="masonry">
+
+    <figure class="work" data-title="Distant Mountains" data-cn="远山清韵" data-images="images/yuanshan_1.jpg,images/yuanshan_2.jpg,images/yuanshan_3.jpg">
+      <div class="ph">
+        <img src="images/yuanshan_1.jpg" alt="Distant Mountains - industrial porcelain installation" loading="lazy">
+        <span class="count">1 / 3</span>
+      </div>
+      <figcaption>
+        <div class="t">Distant Mountains<span class="cn">远山清韵</span></div>
+        <div class="meta">Industrial porcelain, 2019</div>
+        <span class="award">Selected, 13th National Art Exhibition of China</span>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Dream &middot; Stone" data-cn="梦·石" data-images="images/mengshi_1.jpg?v=2,images/mengshi_2.jpg">
+      <div class="ph">
+        <img src="images/mengshi_1.jpg?v=2" alt="Dream Stone - porcelain and stainless steel" loading="lazy">
+        <span class="count">1 / 2</span>
+      </div>
+      <figcaption>
+        <div class="t">Dream &middot; Stone<span class="cn">梦·石</span></div>
+        <div class="meta">Porcelain, stainless steel, 2021</div>
+        <span class="award">Silver Award, National Ceramic Art Exhibition</span>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Curl" data-cn="蜷" data-images="images/quan_1.jpg">
+      <div class="ph">
+        <img src="images/quan_1.jpg" alt="Curl - white porcelain coiled forms" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Curl<span class="cn">蜷</span></div>
+        <div class="meta">Porcelain, 2022</div>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Golden Spears and Iron Steeds" data-cn="金戈铁马" data-images="images/jinge_1.jpg">
+      <div class="ph">
+        <img src="images/jinge_1.jpg" alt="Golden Spears and Iron Steeds - porcelain armoured horses" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Golden Spears and Iron Steeds<span class="cn">金戈铁马</span></div>
+        <div class="meta">Porcelain, 2015</div>
+        <span class="award">Silver Award, 9th National Ceramic Art Design Competition, China Ceramic Industrial Association</span>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Impression: Lake Light and Bamboo Shadow" data-cn="印象·湖光竹影" data-images="images/huying_1.jpg,images/huying_2.jpg,images/huying_3.jpg,images/huying_4.jpg,images/huying_5.jpg,images/huying_6.jpg">
+      <div class="ph">
+        <img src="images/huying_1.jpg" alt="Impression: Lake Light and Bamboo Shadow - porcelain and stainless steel" loading="lazy">
+        <span class="count">1 / 6</span>
+      </div>
+      <figcaption>
+        <div class="t">Impression: Lake Light, Bamboo Shadow<span class="cn">印象·湖光竹影</span></div>
+        <div class="meta">Ceramic and stainless steel, 2024</div>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Auspicious Beast" data-cn="瑞兽" data-images="images/ruishou_1.jpg">
+      <div class="ph">
+        <img src="images/ruishou_1.jpg" alt="Auspicious Beast - ceramic guardian beast" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Auspicious Beast<span class="cn">瑞兽</span></div>
+        <div class="meta">Porcelain, 2020</div>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Rest" data-cn="休憩" data-images="images/xiuqi_1.jpg">
+      <div class="ph">
+        <img src="images/xiuqi_1.jpg" alt="Rest - stoneware bird at rest" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Rest<span class="cn">休憩</span></div>
+        <div class="meta">Stoneware, 2020</div>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Modern Life" data-cn="现代生活" data-images="images/xiandai_1.jpg">
+      <div class="ph">
+        <img src="images/xiandai_1.jpg" alt="Modern Life - blue and white porcelain vase with gold luster" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Modern Life<span class="cn">现代生活</span></div>
+        <div class="meta">Porcelain, gold luster, 2016</div>
+        <span class="award">Collection of Shiwan Ceramic Museum</span>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Return: To the City" data-cn="返城·返程" data-images="images/fancheng_1.jpg">
+      <div class="ph">
+        <img src="images/fancheng_1.jpg" alt="Return To the City - painted fiberglass car trunk" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Return: To the City<span class="cn">返城·返程</span></div>
+        <div class="meta">Painted fiberglass, 2024</div>
+        <span class="award">Excellence Award, 11th Jiangxi Youth Art Exhibition</span>
+      </figcaption>
+    </figure>
+
+
+    <figure class="work" data-title="Rippling" data-cn="荡漾" data-images="images/dongyang_1.jpg">
+      <div class="ph">
+        <img src="images/dongyang_1.jpg" alt="Rippling - blue and white whirlpool installation" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Rippling<span class="cn">荡漾</span></div>
+        <div class="meta">Porcelain, 2023</div>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Observing Stone" data-cn="观石" data-images="images/guanshi_1.jpg">
+      <div class="ph">
+        <img src="images/guanshi_1.jpg" alt="Observing Stone - scholar stone with stainless steel" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Observing Stone<span class="cn">观石</span></div>
+        <div class="meta">Porcelain, stainless steel, 2018</div>
+        <span class="award">Selected Work Award, 2020 KSBDA Fall International Conference, Korea</span>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Tranquility" data-cn="宁静致远" data-images="images/ningjing_1.jpg">
+      <div class="ph">
+        <img src="images/ningjing_1.jpg" alt="Tranquility - ceramic resting bird" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Tranquility<span class="cn">宁静致远</span></div>
+        <div class="meta">Porcelain, 2019</div>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Cai Yuanpei" data-cn="蔡元培" data-images="images/caiyuanpei_1.jpg">
+      <div class="ph">
+        <img src="images/caiyuanpei_1.jpg" alt="Cai Yuanpei - portrait sculpture" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Cai Yuanpei<span class="cn">蔡元培</span></div>
+        <div class="meta">Painted fiberglass, 2024</div>
+      </figcaption>
+    </figure>
+
+    <figure class="work" data-title="Serenity Series" data-cn="谧" data-images="images/mi_1.jpg">
+      <div class="ph">
+        <img src="images/mi_1.jpg" alt="Serenity Series - sea-blue glazed torso fragments" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Serenity Series<span class="cn">谧</span></div>
+        <div class="meta">Glazed fiberglass, 2022</div>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ================= AWARDS ================= -->
+<section id="awards">
+  <div class="sec-head reveal">
+    <span class="num">03</span>
+    <h2>Awards &amp; Exhibitions</h2>
+    <span class="cn-sub">展获奖</span>
+  </div>
+  <div class="awards-list">
+    <div class="aw"><span class="yr">2025</span><span class="what">Selected, "New Life of Everything" exhibition<span>Milan, Italy</span></span><span class="cat">Exhibition</span></div>
+    <div class="aw"><span class="yr">2025</span><span class="what">Excellence Award, 11th Jiangxi Youth Art Exhibition — <i>Return: To the City</i><span>Jiangxi Artists Association</span></span><span class="cat">Award</span></div>
+    <div class="aw"><span class="yr">2024</span><span class="what">Selected Work Award, KSBDA International Conference — <i>Distant Mountains</i><span>Korea Society of Basic Design &amp; Art (also 2020, for <i>Distant Mountains II</i>)</span></span><span class="cat">Award</span></div>
+    <div class="aw"><span class="yr">2023</span><span class="what">Solo exhibition, Jingdezhen</span><span class="cat">Exhibition</span></div>
+    <div class="aw"><span class="yr">2021</span><span class="what">Silver Award, National Ceramic Art Exhibition — <i>Dream &middot; Stone</i></span><span class="cat">Award</span></div>
+    <div class="aw"><span class="yr">2021</span><span class="what">Selected Work Award, 2020 KSBDA Fall International Conference — <i>Observing Stone</i><span>Korea Society of Basic Design &amp; Art</span></span><span class="cat">Award</span></div>
+    <div class="aw"><span class="yr">2019</span><span class="what">Selected, The 13th National Art Exhibition of China — <i>Distant Mountains</i><span>China Artists Association</span></span><span class="cat">Exhibition</span></div>
+    <div class="aw"><span class="yr">2019</span><span class="what">Second Prize, The 15th Jiangxi Art Exhibition — <i>Distant Mountains</i></span><span class="cat">Award</span></div>
+    <div class="aw"><span class="yr">2018</span><span class="what">Selected, 11th China Ceramic Art Exhibition — <i>Observing Stone</i><span>China Ceramic Industrial Association</span></span><span class="cat">Exhibition</span></div>
+    <div class="aw"><span class="yr">2016</span><span class="what">Collection of Shiwan Ceramic Museum, Guangdong — <i>Modern Life</i></span><span class="cat">Collection</span></div>
+    <div class="aw"><span class="yr">2015</span><span class="what">Silver Award, 9th National Ceramic Art Design &amp; Innovation Competition — <i>Golden Spears and Iron Steeds</i><span>China Ceramic Industrial Association</span></span><span class="cat">Award</span></div>
+    <div class="aw"><span class="yr">2009</span><span class="what">Selected, China&ndash;Japan (Aichi) Ceramic Art Exchange Exhibition</span><span class="cat">Exhibition</span></div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <h2 class="reveal">Let's be in touch</h2>
+  <p class="sub reveal">For academic exchange, visiting collaboration, exhibition and collection inquiries.</p>
+  <a class="mail-btn reveal" href="mailto:guirui.sculpture@outlook.com">guirui.sculpture@outlook.com</a>
+  <p class="affil">
+    Department of Sculpture &middot; Academy of Fine Arts &middot; Jingdezhen Ceramic University<br>
+    Jingdezhen, Jiangxi, China
+  </p>
+</section>
+
+<footer>&copy; 2025 RUI GUI &middot; ALL WORKS COPYRIGHTED</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lb" id="lb">
+  <button class="x" id="lbClose">Close ✕</button>
+  <span class="idx" id="lbIdx"></span>
+  <button class="btn prev" id="lbPrev">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="btn next" id="lbNext">›</button>
+  <div class="cap" id="lbCap"></div>
+</div>
+
+<script>
+  // nav border on scroll
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', scrollY > 40);
+  }, {passive:true});
+
+  // reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal, .work, .aw').forEach(el => io.observe(el));
+
+  // lightbox
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  const lbIdx = document.getElementById('lbIdx');
+  let group = [], gi = 0;
+
+  function decode(s){ const t = document.createElement('textarea'); t.innerHTML = s; return t.value; }
+
+  function show(i){
+    gi = (i + group.length) % group.length;
+    lbImg.src = group[gi];
+    lbIdx.textContent = (gi+1) + ' / ' + group.length;
+  }
+  document.querySelectorAll('.work').forEach(w => {
+    w.addEventListener('click', () => {
+      const raw = w.dataset.images || w.querySelector('img').getAttribute('src');
+      group = raw.split(',').map(s => s.trim());
+      const title = decode(w.dataset.title), cn = decode(w.dataset.cn || '');
+      lbCap.innerHTML = '<b>' + title + '</b>' + (cn ? '<span class="cn">' + cn + '</span>' : '');
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      show(0);
+    });
+  });
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
+  document.getElementById('lbClose').onclick = closeLb;
+  document.getElementById('lbPrev').onclick = e => { e.stopPropagation(); show(gi-1); };
+  document.getElementById('lbNext').onclick = e => { e.stopPropagation(); show(gi+1); };
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') show(gi-1);
+    if (e.key === 'ArrowRight') show(gi+1);
+  });
+</script>
+</body>
+</html>
